@@ -1,4 +1,4 @@
-package com.example.collegefinalproject
+package com.example.collegefinalproject.mainMenu
 
 import android.os.Bundle
 import android.util.Log
@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.backendless.Backendless
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.example.collegefinalproject.R
+import com.example.collegefinalproject.login.Account
 
 
-class MainActivity : AppCompatActivity() {
+class MainMenuActivity : AppCompatActivity() {
 
     companion object{
      val TAG = "MainActivity"

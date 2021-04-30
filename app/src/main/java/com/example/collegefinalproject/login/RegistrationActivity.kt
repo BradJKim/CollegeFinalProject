@@ -1,6 +1,5 @@
-package com.example.collegefinalproject
+package com.example.collegefinalproject.login
 
-import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +7,7 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.example.collegefinalproject.R
 import kotlinx.android.synthetic.main.activity_registration.*
 
 

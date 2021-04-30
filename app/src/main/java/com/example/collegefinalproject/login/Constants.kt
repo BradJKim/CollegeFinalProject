@@ -1,4 +1,4 @@
-package com.example.collegefinalproject
+package com.example.collegefinalproject.login
 
 class Constants {
     companion object{

@@ -1,6 +1,5 @@
-package com.example.collegefinalproject
+package com.example.collegefinalproject.login
 
-import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,6 +9,8 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
+import com.example.collegefinalproject.mainMenu.MainMenuActivity
+import com.example.collegefinalproject.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -30,7 +31,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         //initialize
-        Backendless.initApp(this, Constants.APP_ID, Constants.API_KEY)
+        Backendless.initApp(this,
+            Constants.APP_ID,
+            Constants.API_KEY
+        )
 
         button_login_login.setOnClickListener {
             // extract the username and password from the edittexts
@@ -45,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun handleResponse(response: BackendlessUser?) {
                     Toast.makeText(this@LoginActivity, "${response?.userId} logged in", Toast.LENGTH_SHORT).show()
 
-                    val mainActivityIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val mainActivityIntent = Intent(this@LoginActivity, MainMenuActivity::class.java)
                     startActivity(mainActivityIntent)
                     finish()
                 }
@@ -71,7 +75,9 @@ class LoginActivity : AppCompatActivity() {
 
             Log.d(TAG, "starting activity")
 
-            startActivityForResult(registrationIntent, REQUEST_LOGIN_INFO)
+            startActivityForResult(registrationIntent,
+                REQUEST_LOGIN_INFO
+            )
         }
     }
 
