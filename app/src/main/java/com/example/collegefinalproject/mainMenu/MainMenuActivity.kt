@@ -8,6 +8,7 @@ import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.example.collegefinalproject.R
 import com.example.collegefinalproject.login.Account
+import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainMenuActivity : AppCompatActivity() {
@@ -31,6 +32,18 @@ class MainMenuActivity : AppCompatActivity() {
                     Log.d(TAG, "handleFault: " + fault.message)
                 }
             })
+
+        button_main_filter.setOnClickListener {
+
+        }
+
+        button_main_viewing.setOnClickListener {
+
+        }
+
+        button_main_settings.setOnClickListener {
+
+        }
 
     }
 }
