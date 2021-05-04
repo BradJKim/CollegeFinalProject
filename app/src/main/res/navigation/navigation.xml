@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/navHostFragment">
+
+    <fragment
+        android:id="@+id/navHostFragment"
+        android:name="com.example.collegefinalproject.mainMenu.NavHostFragment"
+        android:label="fragment_nav_host"
+        tools:layout="@layout/fragment_nav_host" >
+        <action
+            android:id="@+id/action_navHostFragment_to_viewingListFragment"
+            app:destination="@id/viewingListFragment" />
+        <action
+            android:id="@+id/action_navHostFragment_to_filterFragment"
+            app:destination="@id/filterFragment" />
+        <action
+            android:id="@+id/action_navHostFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.collegefinalproject.mainMenu.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/viewingListFragment"
+        android:name="com.example.collegefinalproject.mainMenu.ViewingListFragment"
+        android:label="fragment_viewing_list"
+        tools:layout="@layout/fragment_viewing_list" >
+        <action
+            android:id="@+id/action_viewingListFragment_to_viewingListViewFragment"
+            app:destination="@id/viewingListViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.example.collegefinalproject.mainMenu.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter" >
+        <action
+            android:id="@+id/action_filterFragment_to_filterViewFragment"
+            app:destination="@id/filterViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/filterViewFragment"
+        android:name="com.example.collegefinalproject.mainMenu.FilterViewFragment"
+        android:label="fragment_filter_view"
+        tools:layout="@layout/fragment_filter_view" />
+    <fragment
+        android:id="@+id/viewingListViewFragment"
+        android:name="com.example.collegefinalproject.mainMenu.ListViewFragment"
+        android:label="fragment_list_view"
+        tools:layout="@layout/fragment_list_view" />
+</navigation>
