@@ -28,6 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginTop="130dp"
         android:ems="10"
         android:hint="@string/username"
         android:inputType="textPersonName"
@@ -35,25 +36,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_username" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.34" />
+        app:layout_constraintTop_toBottomOf="@id/textView_login_welcome" />
 
     <TextView
         android:id="@+id/textView_login_forgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="230dp"
         android:text="@string/forgot_password"
         android:textColor="@color/colorPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/editText_login_password"
+        app:layout_constraintStart_toStartOf="@id/editText_login_password"
         app:layout_constraintTop_toBottomOf="@+id/editText_login_password" />
 
 
@@ -65,11 +60,16 @@
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/login"
+        android:layout_marginTop="440dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="Log In"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_login_forgotPassword"
         app:layout_constraintVertical_chainStyle="packed" />
 
@@ -80,11 +80,47 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="@color/colorAccent"
         android:text="@string/sign_up"
+        android:textColor="@color/colorAccentDark"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_login_login" />
+
+    <TextView
+        android:id="@+id/textView_login_welcome"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="113dp"
+        android:fontFamily="monospace"
+        android:includeFontPadding="true"
+        android:text="Welcome to the Capybara College Counselor \n \n Let's get you started"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editText_login_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="94dp"
+        android:layout_height="259dp"
+        android:layout_marginBottom="25dp"
+        app:srcCompat="@drawable/ic_capybaralogo"
+        tools:layout_editor_absoluteX="158dp"
+        tools:layout_editor_absoluteY="88dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/textView_login_welcome"
+        app:layout_constraintBottom_toBottomOf="@id/editText_login_password"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
