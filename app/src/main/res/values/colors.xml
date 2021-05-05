@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#4E5A75</color>
+    <!-- Light Mode -->
+    <color name="colorPrimaryLight">#4E5A75</color>
+    <color name="colorAccentLight">#5CA3B3</color>
+    <color name="colorTextLight">#363641</color>
+    <color name="colorHintsLight">#999999</color>
+
     <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#5CA3B3</color>
-    <color name="colorHints">#000000</color>
     <color name="colorAccentDark">#FFFFFF</color>
 </resources>
