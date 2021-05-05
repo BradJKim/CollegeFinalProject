@@ -135,7 +135,7 @@
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/colorAccentLight"
         android:fontFamily="@font/fredoka_one"
-        android:text="Canel"
+        android:text="Cancel"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
         app:layout_constraintTop_toBottomOf="@+id/editText_registration_email"
