@@ -121,13 +121,11 @@
         android:id="@+id/imageView"
         android:layout_width="94dp"
         android:layout_height="259dp"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toBottomOf="@id/editText_login_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/textView_login_welcome"
-        app:srcCompat="@drawable/ic_capybaralogo"
-        tools:layout_editor_absoluteX="158dp"
-        tools:layout_editor_absoluteY="88dp" />
+        app:srcCompat="@drawable/ic_capybaralogo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
