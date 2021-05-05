@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.collegefinalproject.R
+import kotlinx.android.synthetic.main.fragment_nav_host.*
+import kotlinx.android.synthetic.main.fragment_nav_host.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +31,7 @@ class NavHostFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(
@@ -35,7 +39,20 @@ class NavHostFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nav_host, container, false)
+        val layout = inflater.inflate(R.layout.fragment_nav_host, container, false)
+
+        layout.button_navHost_filter.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_navHostFragment_to_filterFragment)
+        }
+
+        layout.button_navHost_viewing.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_navHostFragment_to_viewingListFragment)
+        }
+
+        layout.button_navHost_settings.setOnClickListener {
+            view?.findNavController()?.navigate(R.id.action_navHostFragment_to_settingsFragment)
+        }
+        return layout
     }
 
     companion object {

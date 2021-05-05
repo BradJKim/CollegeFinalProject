@@ -8,18 +8,18 @@
     tools:context=".mainMenu.NavHostFragment">
 
     <Button
-        android:id="@+id/button_main_filter"
+        android:id="@+id/button_navHost_filter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Filter"
-        app:layout_constraintBottom_toTopOf="@+id/button_main_viewing"
+        app:layout_constraintBottom_toTopOf="@+id/button_navHost_viewing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_main_settings"
+        android:id="@+id/button_navHost_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings"
@@ -27,17 +27,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_main_viewing" />
+        app:layout_constraintTop_toBottomOf="@+id/button_navHost_viewing" />
 
     <Button
-        android:id="@+id/button_main_viewing"
+        android:id="@+id/button_navHost_viewing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Viewing"
-        app:layout_constraintBottom_toTopOf="@+id/button_main_settings"
+        app:layout_constraintBottom_toTopOf="@+id/button_navHost_settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_main_filter" />
+        app:layout_constraintTop_toBottomOf="@+id/button_navHost_filter" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

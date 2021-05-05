@@ -47,7 +47,7 @@ class LoginActivity : AppCompatActivity() {
                 }
 
                 override fun handleResponse(response: BackendlessUser?) {
-                    Toast.makeText(this@LoginActivity, "${response?.userId} logged in", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "User logged in", Toast.LENGTH_SHORT).show()
 
                     val mainActivityIntent = Intent(this@LoginActivity, MainMenuActivity::class.java)
                     startActivity(mainActivityIntent)

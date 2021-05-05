@@ -58,7 +58,7 @@ class RegistrationActivity : AppCompatActivity() {
         user.setProperty("name", editText_registration_name.text.toString())
         user.setProperty("username", editText_registration_username.text.toString())
         user.setProperty("password", editText_registration_password.text.toString())
-        // user.password = editText_registration_password.text.toString()
+        user.password = editText_registration_password.text.toString()
 
         Backendless.UserService.register(user, object : AsyncCallback<BackendlessUser?> {
             override fun handleResponse(registeredUser: BackendlessUser?) {
