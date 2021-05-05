@@ -33,17 +33,5 @@ class MainMenuActivity : AppCompatActivity() {
                 }
             })
 
-        button_main_filter.setOnClickListener {
-
-        }
-
-        button_main_viewing.setOnClickListener {
-
-        }
-
-        button_main_settings.setOnClickListener {
-
-        }
-
     }
 }
