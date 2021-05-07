@@ -11,6 +11,7 @@ import com.backendless.exceptions.BackendlessFault
 import com.example.collegefinalproject.activities.collegeList
 import com.example.collegefinalproject.models.College
 import com.example.collegefinalproject.services.CollegeService
+import com.example.collegefinalproject.services.CollegeWrapper
 import com.example.collegefinalproject.services.ServiceBuilder
 import retrofit2.Call
 import retrofit2.Callback
@@ -43,20 +44,19 @@ class MainActivity : AppCompatActivity() {
 //
     private fun loadColleges() {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
-        val requestCall = destinationService.getCollegesList()
-
-        requestCall.enqueue(object : Callback<List<College>> {
-            override fun onResponse(call: Call<List<College>>, response: Response<List<College>>) {
+        val requestCall = destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
+        requestCall.enqueue(object : Callback<CollegeWrapper> {
+            override fun onResponse(call: Call<CollegeWrapper>, response: Response<CollegeWrapper>) {
                 Log.d("Response", "onResponse: ${response.body()}")
                 if (response.isSuccessful){
-                    val collegeList = response.body() ?: emptyList()
-                    Log.d("Response", "collegeList size: ${collegeList.size}")
+                    val collegeList = response.body()?.results
+                    Log.d("Response", "collegeList size: ${collegeList?.size}")
                 }
                 else{
                     Toast.makeText(this@MainActivity, "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
                 }
             }
-            override fun onFailure(call: Call<List<College>>, t: Throwable) {
+            override fun onFailure(call: Call<CollegeWrapper>, t: Throwable) {
                 Toast.makeText(this@MainActivity, "Something went wrong $t", Toast.LENGTH_SHORT).show()
             }
         })

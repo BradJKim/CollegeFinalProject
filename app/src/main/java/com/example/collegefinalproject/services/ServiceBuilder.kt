@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ServiceBuilder {
-    private const val URL ="https://api.data.gov/ed/collegescorecard/"
+    private const val URL ="https://api.data.gov/ed/collegescorecard/v1/"
     //CREATE HTTP CLIENT
     private val okHttp =OkHttpClient.Builder()
 
