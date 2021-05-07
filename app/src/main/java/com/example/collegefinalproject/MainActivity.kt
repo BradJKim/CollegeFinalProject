@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             })
         loadColleges()
     }
-
+//
     private fun loadColleges() {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
         val requestCall = destinationService.getCollegesList()
