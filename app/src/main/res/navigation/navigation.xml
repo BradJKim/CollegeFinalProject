@@ -47,10 +47,23 @@
         android:id="@+id/filterViewFragment"
         android:name="com.example.collegefinalproject.mainMenu.FilterViewFragment"
         android:label="fragment_filter_view"
-        tools:layout="@layout/fragment_filter_view" />
+        tools:layout="@layout/fragment_filter_view" >
+        <action
+            android:id="@+id/action_filterViewFragment_to_collegeFragment"
+            app:destination="@id/collegeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/viewingListViewFragment"
         android:name="com.example.collegefinalproject.mainMenu.ListViewFragment"
         android:label="fragment_list_view"
-        tools:layout="@layout/fragment_list_view" />
+        tools:layout="@layout/fragment_list_view" >
+        <action
+            android:id="@+id/action_viewingListViewFragment_to_collegeFragment"
+            app:destination="@id/collegeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/collegeFragment"
+        android:name="com.example.collegefinalproject.mainMenu.CollegeFragment"
+        android:label="fragment_college"
+        tools:layout="@layout/fragment_college" />
 </navigation>

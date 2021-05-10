@@ -9,8 +9,8 @@ import com.backendless.Backendless
 import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
-import com.example.collegefinalproject.mainMenu.MainMenuActivity
 import com.example.collegefinalproject.R
+import com.example.collegefinalproject.mainMenu.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                 override fun handleResponse(response: BackendlessUser?) {
                     Toast.makeText(this@LoginActivity, "User logged in", Toast.LENGTH_SHORT).show()
 
-                    val mainActivityIntent = Intent(this@LoginActivity, MainMenuActivity::class.java)
+                    val mainActivityIntent = Intent(this@LoginActivity, MainActivity::class.java)
                     startActivity(mainActivityIntent)
                     finish()
                 }
