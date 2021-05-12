@@ -13,11 +13,8 @@ data class College(
         val academics: Academics,
         val admissions: Admissions,
         val aid: Aid,
-        val completion: Completion,
         val cost: Cost,
-        val earnings: Earnings,
         val programs: Programs,
-        val repayment: Repayment,
         val student: Student
     ) {
         data class Academics(
@@ -336,39 +333,39 @@ data class College(
                 val architecture: Double,
                 val biological: Double,
                 val business_marketing: Double,
-                val communication: Int,
+                val communication: Double,
                 val communications_technology: Double,
                 val computer: Double,
-                val construction: Int,
+                val construction: Double,
                 val education: Double,
                 val engineering: Double,
                 val engineering_technology: Double,
                 val english: Double,
-                val ethnic_cultural_gender: Int,
+                val ethnic_cultural_gender: Double,
                 val family_consumer_science: Double,
-                val health: Int,
-                val history: Int,
+                val health: Double,
+                val history: Double,
                 val humanities: Double,
-                val language: Int,
-                val legal: Int,
-                val library: Int,
+                val language: Double,
+                val legal: Double,
+                val library: Double,
                 val mathematics: Double,
-                val mechanic_repair_technology: Int,
-                val military: Int,
-                val multidiscipline: Int,
+                val mechanic_repair_technology: Double,
+                val military: Double,
+                val multidiscipline: Double,
                 val parks_recreation_fitness: Double,
-                val personal_culinary: Int,
-                val philosophy_religious: Int,
+                val personal_culinary: Double,
+                val philosophy_religious: Double,
                 val physical_science: Double,
-                val precision_production: Int,
+                val precision_production: Double,
                 val psychology: Double,
                 val public_administration_social_service: Double,
                 val resources: Double,
-                val science_technology: Int,
+                val science_technology: Double,
                 val security_law_enforcement: Double,
                 val social_science: Double,
-                val theology_religious_vocation: Int,
-                val transportation: Int,
+                val theology_religious_vocation: Double,
+                val transportation: Double,
                 val visual_performing: Double
             )
 
@@ -453,7 +450,6 @@ data class College(
                 val `75th_percentile`: ThPercentile,
                 val midpoint: Midpoint
             ) {
-
                 data class ThPercentile(
                     val cumulative: Int,
                     val english: Int,
@@ -481,7 +477,6 @@ data class College(
                 val average: Average,
                 val midpoint: Midpoint
             ) {
-
                 data class ThPercentile(
                     val critical_reading: Int,
                     val math: Int,
@@ -794,7 +789,7 @@ data class College(
                 val parent_plus: ParentPlus
             ) {
                 data class DirectLoans(
-                    val amount: Int,
+                    val amount: Double,
                     val count: Int
                 )
 
@@ -810,6 +805,7 @@ data class College(
             }
         }
 
+        /**
         data class Completion(
             val `2_yr_completion`: YrCompletion,
             val `3_yr_completion`: YrCompletion,
@@ -939,7 +935,6 @@ data class College(
                 val pell_grant: Int
             )
 
-
             data class CompletionCohort4yr150Nonresident(
                 val alien: Int
             )
@@ -1014,7 +1009,9 @@ data class College(
                     )
                 }
             }
+            */
 
+        /**
             data class OutcomePercentage(
                 val all_students: AllStudents,
                 val first_time: FirstTime,
@@ -1090,7 +1087,9 @@ data class College(
                         )
                     }
                 }
+            */
 
+            /**
                 data class NotFirstTime(
                     val `8yr`: Yr
                 ) {
@@ -1149,7 +1148,9 @@ data class College(
                     }
                 }
             }
+            */
 
+            /**
             data class OutcomePercentageSuppressed(
                 val all_students: AllStudents,
                 val first_time: FirstTime,
@@ -1198,9 +1199,9 @@ data class College(
 
                         data class Yr(
                             val award_pooled: Double,
-                            val still_enrolled_pooled: Double,
-                            val transfer_pooled: Double,
-                            val unknown_pooled: Double
+                            val still_enrolled_pooled: Double?,
+                            val transfer_pooled: Double?,
+                            val unknown_pooled: Double?
                         )
                     }
 
@@ -1211,9 +1212,9 @@ data class College(
 
                         data class Yr(
                             val award_pooled: Double,
-                            val still_enrolled_pooled: Double,
-                            val transfer_pooled: Double,
-                            val unknown_pooled: Double
+                            val still_enrolled_pooled: Double?,
+                            val transfer_pooled: Double?,
+                            val unknown_pooled: Double?
                         )
                     }
                 }
@@ -1248,9 +1249,9 @@ data class College(
 
                         data class Yr(
                             val award_pooled: Double,
-                            val still_enrolled_pooled: Double,
-                            val transfer_pooled: Double,
-                            val unknown_pooled: Double
+                            val still_enrolled_pooled: Double?,
+                            val transfer_pooled: Double?,
+                            val unknown_pooled: Double?
                         )
                     }
 
@@ -1261,9 +1262,9 @@ data class College(
 
                         data class Yr(
                             val award_pooled: Double,
-                            val still_enrolled_pooled: Double,
-                            val transfer_pooled: Double,
-                            val unknown_pooled: Double
+                            val still_enrolled_pooled: Double?,
+                            val transfer_pooled: Double?,
+                            val unknown_pooled: Double?
                         )
                     }
                 }
@@ -1288,7 +1289,9 @@ data class College(
                     val not_first_time: Int
                 )
             }
+            */
 
+            /**
             data class RateSuppressed(
                 val four_year: Double,
                 val four_year_100_pooled: Double,
@@ -1947,7 +1950,9 @@ data class College(
                         val `8yrs`: Double
                     )
                 }
+                */
 
+                /**
                 data class LoanRecip(
                     val completed_by: CompletedBy,
                     val died_by: DiedBy,
@@ -3037,7 +3042,7 @@ data class College(
                 )
             }
         }
-
+        */
         data class Cost(
             val attendance: Attendance,
             val avg_net_price: AvgNetPrice,
@@ -3281,51 +3286,51 @@ data class College(
             val student_count: Any
         ) {
             data class YrsAfterEntry(
-                val female_students: Int,
-                val independent_students: Int,
-                val male_students: Int,
-                val mean_earnings: MeanEarnings,
-                val median: Int,
-                val not_working_not_enrolled: NotWorkingNotEnrolled,
-                val percent_greater_than_25000: Double,
-                val percent_greater_than_28000: Double,
-                val working_not_enrolled: WorkingNotEnrolled
+                val female_students: Int?,
+                val independent_students: Int?,
+                val male_students: Int?,
+                val mean_earnings: MeanEarnings?,
+                val median: Int?,
+                val not_working_not_enrolled: NotWorkingNotEnrolled?,
+                val percent_greater_than_25000: Double?,
+                val percent_greater_than_28000: Double?,
+                val working_not_enrolled: WorkingNotEnrolled?
             ) {
                 data class MeanEarnings(
-                    val dependent_students: Int,
-                    val dependent_students_lowest_tercile: Int,
-                    val female_students: Int,
-                    val highest_tercile: Int,
-                    val independent_students: Int,
-                    val lowest_tercile: Int,
-                    val male_students: Int,
-                    val middle_tercile: Int
+                    val dependent_students: Int?,
+                    val dependent_students_lowest_tercile: Int?,
+                    val female_students: Int?,
+                    val highest_tercile: Int?,
+                    val independent_students: Int?,
+                    val lowest_tercile: Int?,
+                    val male_students: Int?,
+                    val middle_tercile: Int?
                 )
 
                 data class NotWorkingNotEnrolled(
-                    val overall: Int
+                    val overall: Int?
                 )
 
                 data class WorkingNotEnrolled(
-                    val dependent_students: Int,
-                    val dependent_students_lowest_tercile: Int,
-                    val earnings_percentile: EarningsPercentile,
-                    val income: Income,
-                    val mean_earnings: Int,
-                    val overall: Int,
-                    val std_dev: Int
+                    val dependent_students: Int?,
+                    val dependent_students_lowest_tercile: Int?,
+                    val earnings_percentile: EarningsPercentile?,
+                    val income: Income?,
+                    val mean_earnings: Int?,
+                    val overall: Int?,
+                    val std_dev: Int?
                 ) {
                     data class EarningsPercentile(
-                        val `10`: Int,
-                        val `25`: Int,
-                        val `75`: Int,
-                        val `90`: Int
+                        val `10`: Int?,
+                        val `25`: Int?,
+                        val `75`: Int?,
+                        val `90`: Int?
                     )
 
                     data class Income(
-                        val highest_tercile: Int,
-                        val lowest_tercile: Int,
-                        val middle_tercile: Int
+                        val highest_tercile: Int?,
+                        val lowest_tercile: Int?,
+                        val middle_tercile: Int?
                     )
                 }
             }
@@ -3343,7 +3348,6 @@ data class College(
                     val overall_count: Int
                 )
             }
-
         }
 
         data class Programs(
@@ -3566,6 +3570,7 @@ data class College(
                     }
                 }
 
+                /**
                 data class Earnings(
                     val highest: Highest
                 ) {
@@ -3574,21 +3579,22 @@ data class College(
                         val `2_yr`: Yr
                     ) {
                         data class Yr(
-                            val not_working_not_enrolled: NotWorkingNotEnrolled,
-                            val overall_count_over_poverty_line: Any,
-                            val overall_median_earnings: Any,
-                            val working_not_enrolled: WorkingNotEnrolled
+                            val not_working_not_enrolled: NotWorkingNotEnrolled?,
+                            val overall_count_over_poverty_line: Any?,
+                            val overall_median_earnings: Any?,
+                            val working_not_enrolled: WorkingNotEnrolled?
                         ) {
                             data class NotWorkingNotEnrolled(
-                                val overall_count: Any
+                                val overall_count: Any?
                             )
 
                             data class WorkingNotEnrolled(
-                                val overall_count: Any
+                                val overall_count: Any?
                             )
                         }
                     }
                 }
+                */
 
                 data class Repayment(
                     val `2_yr_bb_fed_comp`: YrBbFedComp
@@ -3613,7 +3619,7 @@ data class College(
                 )
             }
         }
-
+        /**
         data class Repayment(
             val `10_yr_db_fed_repayment`: YrDbFedRepayment,
             val `10_yr_db_pp_repayment`: YrDbPpRepayment,
@@ -3644,43 +3650,19 @@ data class College(
         ) {
 
             data class YrBbFedRepayment(
-                val gr: Gr?,
-                val grcomp: Grcomp?,
-                val grnocomp: Grnocomp?,
+                val gr: Gr,
+                val grcomp: College.Latest.Repayment.YrBbFedRepayment.Grcomp,
+                val grnocomp: College.Latest.Repayment.YrBbFedRepayment.Grnocomp,
                 val ug: Ug,
-                val ugcomp: Ugcomp?,
-                val ugnocomp: Ugnocomp?,
-                val ugunkcomp: Ugunkcomp?
+                val ugcomp: Ugcomp,
+                val ugnocomp: Ugnocomp,
+                val ugunkcomp: Ugunkcomp
             ) {
                 data class Gr(
                     val count: Int,
                     val default: Any,
                     val deferment: Double,
                     val delinquent: Double,
-                    val discharge: Any,
-                    val forbearance: Double,
-                    val fullypaid: Any,
-                    val makingprogress: Any,
-                    val noprogress: Double
-                )
-
-                data class Grcomp(
-                    val count: Int,
-                    val default: Any,
-                    val deferment: Any,
-                    val delinquent: Any,
-                    val discharge: Any,
-                    val forbearance: Double,
-                    val fullypaid: Any,
-                    val makingprogress: Any,
-                    val noprogress: Double
-                )
-
-                data class Grnocomp(
-                    val count: Int,
-                    val default: Any,
-                    val deferment: Any,
-                    val delinquent: Any,
                     val discharge: Any,
                     val forbearance: Double,
                     val fullypaid: Any,
@@ -3737,6 +3719,257 @@ data class College(
                 )
             }
 
+            data class YrDbFedRepayment(
+                val gr: Gr,
+                val gr_completer: GrCompleter,
+                val gr_noncompleter: GrNoncompleter,
+                val ug: Ug,
+                val ug_completer: UgCompleter,
+                val ug_completer_unknown: UgCompleterUnknown,
+                val ug_noncompleter: UgNoncompleter
+            ) {
+                data class Gr(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class GrCompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class GrNoncompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleterUnknown(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgNoncompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrDbPpRepayment(
+                val ug: Ug,
+                val ug_completer: UgCompleter,
+                val ug_completer_unknown: UgCompleterUnknown,
+                val ug_noncompleter: UgNoncompleter
+            ) {
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleterUnknown(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgNoncompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrRepayment(
+                val completers: Int,
+                val completers_rate: Double,
+                val dependent_students: Int,
+                val dependent_students_rate: Double,
+                val female_students: Int,
+                val female_students_rate: Double,
+                val first_generation_students: Int,
+                val first_generation_students_rate: Double,
+                val high_income: Int,
+                val income: Income,
+                val independent_students: Int,
+                val independent_students_rate: Double,
+                val low_income: Int,
+                val male_students: Int,
+                val male_students_rate: Double,
+                val middle_income: Int,
+                val no_pell_grant: Int,
+                val no_pell_grant_rate: Double,
+                val non_first_generation_students: Int,
+                val non_first_generation_students_rate: Double,
+                val noncompleters: Int,
+                val noncompleters_rate: Double,
+                val overall: Int,
+                val pell_grant: Int,
+                val pell_grant_rate: Double
+            ) {
+                data class Income(
+                    val `0_30000`: Double,
+                    val `30000_75000`: Double,
+                    val greater_than_75000: Double
+                )
+            }
+
+            data class YrDbFedRepayment(
+                val gr: Gr,
+                val ug: Ug
+            ) {
+                data class Gr(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrDbPpRepayment(
+                val ug: Ug
+            ) {
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrBbFedRepayment(
+                val gr: Gr,
+                val grcomp: Grcomp,
+                val grnocomp: Grnocomp,
+                val ug: Ug,
+                val ugcomp: Ugcomp,
+                val ugnocomp: Ugnocomp,
+                val ugunkcomp: Ugunkcomp
+            ) {
+                data class Gr(
+                    val count: Int,
+                    val default: Double,
+                    val deferment: Double,
+                    val delinquent: Double,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Any,
+                    val makingprogress: Double,
+                    val noprogress: Double
+                )
+
+                data class Grcomp(
+                    val count: Int,
+                    val default: Any,
+                    val deferment: Any,
+                    val delinquent: Any,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Any,
+                    val makingprogress: Any,
+                    val noprogress: Double
+                )
+
+                data class Grnocomp(
+                    val count: Int,
+                    val default: Any,
+                    val deferment: Any,
+                    val delinquent: Any,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Any,
+                    val makingprogress: Any,
+                    val noprogress: Double
+                )
+
+                data class Ug(
+                    val count: Int,
+                    val default: Double,
+                    val deferment: Double,
+                    val delinquent: Double,
+                    val discharge: Double,
+                    val forbearance: Double,
+                    val fullypaid: Double,
+                    val makingprogress: Double,
+                    val noprogress: Double
+                )
+
+                data class Ugcomp(
+                    val count: Int,
+                    val default: Double,
+                    val deferment: Double,
+                    val delinquent: Double,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Any,
+                    val makingprogress: Double,
+                    val noprogress: Double
+                )
+
+                data class Ugnocomp(
+                    val count: Int,
+                    val default: Double,
+                    val deferment: Double,
+                    val delinquent: Any,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Double,
+                    val makingprogress: Double,
+                    val noprogress: Double
+                )
+
+                data class Ugunkcomp(
+                    val count: Int,
+                    val default: Double,
+                    val deferment: Double,
+                    val delinquent: Any,
+                    val discharge: Any,
+                    val forbearance: Double,
+                    val fullypaid: Any,
+                    val makingprogress: Double,
+                    val noprogress: Double
+                )
+            }
 
             data class YrBbFedRepaymentSuppressed(
                 val ug: Ug,
@@ -3879,6 +4112,84 @@ data class College(
 
             data class YrDbFedRepayment(
                 val gr: Gr,
+                val ug: Ug,
+                val ug_completer: UgCompleter,
+                val ug_completer_unknown: UgCompleterUnknown,
+                val ug_noncompleter: UgNoncompleter
+            ) {
+                data class Gr(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleterUnknown(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgNoncompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrDbPpRepayment(
+                val ug: Ug,
+                val ug_completer: UgCompleter,
+                val ug_completer_unknown: UgCompleterUnknown,
+                val ug_noncompleter: UgNoncompleter
+            ) {
+                data class Ug(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgCompleterUnknown(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+
+                data class UgNoncompleter(
+                    val count: Int,
+                    val denominator: Int,
+                    val numerator: Int,
+                    val rate: Double
+                )
+            }
+
+            data class YrDbFedRepayment(
+                val gr: Gr,
                 val ug: Ug
             ) {
                 data class Gr(
@@ -3907,6 +4218,74 @@ data class College(
                 )
             }
 
+            data class YrRepayment(
+                val completers: Int,
+                val completers_rate: Double,
+                val dependent_students: Int,
+                val dependent_students_rate: Double,
+                val female_students: Int,
+                val female_students_rate: Double,
+                val first_generation_students: Int,
+                val first_generation_students_rate: Double,
+                val high_income: Int,
+                val income: Income,
+                val independent_students: Int,
+                val independent_students_rate: Double,
+                val low_income: Int,
+                val male_students: Int,
+                val male_students_rate: Double,
+                val middle_income: Int,
+                val no_pell_grant: Int,
+                val no_pell_grant_rate: Double,
+                val non_first_generation_students: Int,
+                val non_first_generation_students_rate: Double,
+                val noncompleters: Int,
+                val noncompleters_rate: Double,
+                val overall: Int,
+                val pell_grant: Int,
+                val pell_grant_rate: Double
+            ) {
+                data class Income(
+                    val `0_30000`: Double,
+                    val `30000_75000`: Double,
+                    val greater_than_75000: Double
+                )
+            }
+
+            data class YrRepayment(
+                val completers: Int,
+                val completers_rate: Double,
+                val dependent_students: Int,
+                val dependent_students_rate: Double,
+                val female_students: Int,
+                val female_students_rate: Double,
+                val first_generation_students: Int,
+                val first_generation_students_rate: Double,
+                val high_income: Int,
+                val income: Income,
+                val independent_students: Int,
+                val independent_students_rate: Double,
+                val low_income: Int,
+                val male_students: Int,
+                val male_students_rate: Double,
+                val middle_income: Int,
+                val no_pell_grant: Int,
+                val no_pell_grant_rate: Double,
+                val non_first_generation_students: Int,
+                val non_first_generation_students_rate: Double,
+                val noncompleters: Int,
+                val noncompleters_rate: Double,
+                val overall: Int,
+                val pell_grant: Int,
+                val pell_grant_rate: Double
+            ) {
+                data class Income(
+                    val `0_30000`: Double,
+                    val `30000_75000`: Double,
+                    val greater_than_75000: Double
+                )
+            }
+
             data class RepaymentCohort(
                 val `1_year_declining_balance`: Double,
                 val `3_year_declining_balance`: Double,
@@ -3919,7 +4298,7 @@ data class College(
                 val number: Int
             )
         }
-
+        */
         data class Student(
             val FAFSA_applications: Int,
             val avg_dependent_income: AvgDependentIncome,
@@ -4022,7 +4401,7 @@ data class College(
                 )
 
                 data class ShareBachelorsDegreeAge25(
-                    val home_ZIP: Int
+                    val home_ZIP: Double
                 )
 
                 data class ShareBlack(
@@ -4096,7 +4475,7 @@ data class College(
                 data class FourYear(
                     val full_time: Double,
                     val full_time_pooled: Double,
-                    val part_time: Int,
+                    val part_time: Double,
                     val part_time_pooled: Double
                 )
 
@@ -4259,3 +4638,4 @@ data class College(
         )
     }
 }
+

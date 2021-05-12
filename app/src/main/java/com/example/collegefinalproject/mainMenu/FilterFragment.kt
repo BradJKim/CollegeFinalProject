@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import com.example.collegefinalproject.R
+import kotlinx.android.synthetic.main.fragment_filter.*
+import kotlinx.android.synthetic.main.fragment_filter.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,6 +20,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [FilterFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+
 class FilterFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
@@ -35,7 +39,21 @@ class FilterFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_filter, container, false)
+        val layout = inflater.inflate(R.layout.fragment_filter, container, false)
+
+        layout.button_filter_1.setOnClickListener {
+            MainActivity.filter = button_filter_1.text.toString()
+            view?.findNavController()?.navigate(R.id.action_filterFragment_to_filterViewFragment)
+        }
+        layout.button_filter_2.setOnClickListener {
+            MainActivity.filter = button_filter_2.text.toString()
+            view?.findNavController()?.navigate(R.id.action_filterFragment_to_filterViewFragment)
+        }
+        layout.button_filter_3.setOnClickListener {
+            MainActivity.filter = button_filter_3.text.toString()
+            view?.findNavController()?.navigate(R.id.action_filterFragment_to_filterViewFragment)
+        }
+        return layout
     }
 
     companion object {

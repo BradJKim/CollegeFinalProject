@@ -19,16 +19,18 @@ import retrofit2.Response
 class MainActivity : AppCompatActivity() {
 
     companion object{
-     val TAG = "MainActivity"
+       val TAG = "MainActivity"
+       var filter = ""
+        var list = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        loadColleges()
+
     }
-//
+
     private fun loadColleges() {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
         val requestCall = destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
@@ -38,6 +40,7 @@ class MainActivity : AppCompatActivity() {
                 if (response.isSuccessful){
                     val collegeList = response.body()?.results
                     Log.d("Response", "collegeList size: ${collegeList?.size}")
+                    Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
                 }
                 else{
                     Toast.makeText(this@MainActivity, "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
