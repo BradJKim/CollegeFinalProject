@@ -8,36 +8,35 @@
     tools:context=".mainMenu.NavHostFragment">
 
     <Button
+        android:id="@+id/button_navHost_viewing"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_viewicon"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="628dp" />
+
+    <Button
+        android:id="@+id/button_navHost_home"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_homeiconunclicked"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="629dp" />
+
+    <Button
         android:id="@+id/button_navHost_filter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Filter"
-        app:layout_constraintBottom_toTopOf="@+id/button_navHost_viewing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:background="@drawable/ic_filtericon"
+        tools:layout_editor_absoluteX="218dp"
+        tools:layout_editor_absoluteY="628dp" />
 
     <Button
         android:id="@+id/button_navHost_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_navHost_viewing" />
-
-    <Button
-        android:id="@+id/button_navHost_viewing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Viewing"
-        app:layout_constraintBottom_toTopOf="@+id/button_navHost_settings"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_navHost_filter" />
+        tools:layout_editor_absoluteX="306dp"
+        tools:layout_editor_absoluteY="636dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
