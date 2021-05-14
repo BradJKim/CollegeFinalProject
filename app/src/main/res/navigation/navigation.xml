@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_nav_host" >
         <action
             android:id="@+id/action_navHostFragment_to_viewingListFragment"
-            app:destination="@id/viewingListFragment" />
+            app:destination="@id/listFragment" />
         <action
             android:id="@+id/action_navHostFragment_to_filterFragment"
             app:destination="@id/filterFragment" />
@@ -26,13 +26,13 @@
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/viewingListFragment"
+        android:id="@+id/listFragment"
         android:name="com.example.collegefinalproject.mainMenu.ViewingListFragment"
-        android:label="fragment_viewing_list"
-        tools:layout="@layout/fragment_viewing_list" >
+        android:label="fragment_list_list"
+        tools:layout="@layout/fragment_viewing_list">
         <action
             android:id="@+id/action_viewingListFragment_to_viewingListViewFragment"
-            app:destination="@id/viewingListViewFragment" />
+            app:destination="@id/listViewFragment" />
     </fragment>
     <fragment
         android:id="@+id/filterFragment"
@@ -53,7 +53,7 @@
             app:destination="@id/collegeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/viewingListViewFragment"
+        android:id="@+id/listViewFragment"
         android:name="com.example.collegefinalproject.mainMenu.ListViewFragment"
         android:label="fragment_list_view"
         tools:layout="@layout/fragment_list_view" >
