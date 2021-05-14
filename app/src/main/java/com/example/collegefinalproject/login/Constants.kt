@@ -2,7 +2,7 @@ package com.example.collegefinalproject.login
 
 class Constants {
     companion object{
-        val APP_ID = "7CDDE49F-DEDE-42D1-9A5A-53A13FE0EA7C"
-        val API_KEY = "4EBC7FA8-C79A-4127-B966-F84446C89310"
+        val APP_ID = "F93E3EAD-7D76-44CE-A45F-FC8BD4E7E347"
+        val API_KEY = "CF1D3382-59A0-4450-8112-E82E76DB6F5B"
     }
 }

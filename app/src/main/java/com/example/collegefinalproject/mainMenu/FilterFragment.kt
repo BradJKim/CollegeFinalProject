@@ -41,6 +41,8 @@ class FilterFragment : Fragment() {
         // Inflate the layout for this fragment
         val layout = inflater.inflate(R.layout.fragment_filter, container, false)
 
+        // Create onClickListeners here for filters
+        // set filter in mainactivity into filter name and navigate to new fragment
         layout.button_filter_1.setOnClickListener {
             MainActivity.filter = button_filter_1.text.toString()
             view?.findNavController()?.navigate(R.id.action_filterFragment_to_filterViewFragment)

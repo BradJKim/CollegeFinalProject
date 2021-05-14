@@ -789,7 +789,7 @@ data class College(
                 val parent_plus: ParentPlus
             ) {
                 data class DirectLoans(
-                    val amount: Double,
+                    val amount: Int,
                     val count: Int
                 )
 
