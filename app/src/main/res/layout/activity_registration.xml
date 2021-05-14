@@ -35,10 +35,10 @@
         android:fontFamily="@font/fredoka_one"
         android:hint="Name"
         android:textColorHint="@color/colorHintsLight"
-        app:layout_constraintTop_toBottomOf="@id/editText_registration_username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_registration_username" />
 
     <EditText
         android:id="@+id/editText_registration_username"
@@ -51,10 +51,10 @@
         android:fontFamily="@font/fredoka_one"
         android:hint="@string/username"
         android:textColorHint="@color/colorHintsLight"
-        app:layout_constraintTop_toBottomOf="@id/textView_registration_thankyou"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_registration_thankyou" />
 
     <EditText
         android:id="@+id/editText_registration_password"
@@ -67,10 +67,10 @@
         android:fontFamily="@font/fredoka_one"
         android:hint="Password"
         android:textColorHint="@color/colorHintsLight"
-        app:layout_constraintTop_toBottomOf="@id/editText_registration_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/editText_registration_name" />
 
     <EditText
         android:id="@+id/editText_registration_confirm_password"
@@ -82,12 +82,12 @@
         android:ems="10"
         android:fontFamily="@font/fredoka_one"
         android:hint="Confirm Password"
+        android:inputType="textPassword"
         android:textColorHint="@color/colorHintsLight"
-        app:layout_constraintTop_toBottomOf="@id/editText_registration_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:inputType="textPassword" />
+        app:layout_constraintTop_toBottomOf="@id/editText_registration_password" />
 
     <EditText
         android:id="@+id/editText_registration_email"
@@ -99,12 +99,12 @@
         android:ems="10"
         android:fontFamily="@font/fredoka_one"
         android:hint="Email Address"
+        android:inputType="textEmailAddress"
         android:textColorHint="@color/colorHintsLight"
-        app:layout_constraintTop_toBottomOf="@id/editText_registration_confirm_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        android:inputType="textEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@id/editText_registration_confirm_password" />
 
     <Button
         android:id="@+id/button_registration_create"
@@ -120,17 +120,20 @@
         android:text="Submit"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
+        app:layout_constraintEnd_toStartOf="@+id/button_registration_cancel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_registration_email"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintVertical_chainStyle="packed" />
 
     <Button
         android:id="@+id/button_registration_cancel"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="174dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="32dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/rounded_corners"
         android:backgroundTint="@color/colorAccentLight"
@@ -138,7 +141,9 @@
         android:text="Cancel"
         android:textAllCaps="false"
         app:layout_constraintBottom_toTopOf="@+id/button_login_signup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_registration_create"
         app:layout_constraintTop_toBottomOf="@+id/editText_registration_email"
-        app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintVertical_chainStyle="packed" />
 </androidx.constraintlayout.widget.ConstraintLayout>
