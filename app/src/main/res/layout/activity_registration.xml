@@ -67,6 +67,7 @@
         android:fontFamily="@font/fredoka_one"
         android:hint="Password"
         android:textColorHint="@color/colorHintsLight"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/editText_registration_name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -83,11 +84,11 @@
         android:fontFamily="@font/fredoka_one"
         android:hint="Confirm Password"
         android:textColorHint="@color/colorHintsLight"
+        android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@id/editText_registration_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:inputType="textPassword" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editText_registration_email"
