@@ -5,7 +5,7 @@
     android:id="@+id/collegeConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainMenu.CollegeFragment">
+    tools:context=".Main.CollegeFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -17,7 +17,7 @@
         android:fontFamily="@font/fredoka_one"
         android:layout_marginTop="40dp"
         android:layout_marginStart="20dp"
-        android:text="@id/collegeName"
+        android:text="collegeName"
         android:textSize="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -25,7 +25,7 @@
     <TextView
         android:id="@+id/textView_college_description"
         android:fontFamily="@font/fredoka_one"
-        android:text="@id/description"
+        android:text="description"
         android:textSize="20dp"
         android:layout_width="300dp"
         android:layout_height="wrap_content"

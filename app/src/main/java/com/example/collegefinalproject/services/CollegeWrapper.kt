@@ -4,5 +4,5 @@ import com.example.collegefinalproject.models.College
 
 class CollegeWrapper (
     val metadata : Metadata,
-    val results : List<College>
+    val results : MutableList<College>
 )

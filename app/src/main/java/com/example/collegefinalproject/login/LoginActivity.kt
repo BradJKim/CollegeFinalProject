@@ -10,7 +10,7 @@ import com.backendless.BackendlessUser
 import com.backendless.async.callback.AsyncCallback
 import com.backendless.exceptions.BackendlessFault
 import com.example.collegefinalproject.R
-import com.example.collegefinalproject.mainMenu.MainActivity
+import com.example.collegefinalproject.Main.MainActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 

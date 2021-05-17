@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.collegefinalproject.Main.MainActivity
 import com.example.collegefinalproject.R
-import com.example.collegefinalproject.mainMenu.MainActivity
 import com.example.collegefinalproject.models.College
 import com.squareup.picasso.Picasso
 
@@ -51,6 +52,16 @@ class CollegesAdapter(private val collegesList: List<College>) :RecyclerView.Ada
                 }
                 filter.contains("Asian") -> {
                     description.text = college.latest.student.demographics.race_ethnicity.asian.toString()
+                }
+            }
+
+            var navController = Navigation.findNavController(itemView)
+            itemView.setOnClickListener{
+                if(MainActivity.fragment.equals("Filter")) {
+                    navController!!.navigate(R.id.action_filterViewFragment_to_collegeFragment)
+                }
+                else if(MainActivity.fragment.equals("List")){
+                    navController!!.navigate(R.id.action_viewingListViewFragment_to_collegeFragment)
                 }
             }
         }

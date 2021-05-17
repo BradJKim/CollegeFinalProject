@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".mainMenu.FilterFragment">
+    tools:context=".Main.FilterFragment">
 
     <Button
         android:id="@+id/button_filter_3"
