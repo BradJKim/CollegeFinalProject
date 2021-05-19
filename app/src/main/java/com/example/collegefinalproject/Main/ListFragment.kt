@@ -35,7 +35,11 @@ class ViewingListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_viewing_list, container, false)
+        return inflater.inflate(R.layout.fragment_list, container, false)
+
+        // Make college list adapter
+        // Put recycler on fragment list
+        // apply recycler? (w/list of collegelists, received earlier)
     }
 
     companion object {

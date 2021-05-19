@@ -16,7 +16,8 @@ import com.example.collegefinalproject.services.CollegeService
 import com.example.collegefinalproject.services.CollegeWrapper
 import com.example.collegefinalproject.services.ServiceBuilder
 import dev.bensalcie.retrofitest.helpers.CollegesAdapter
-import kotlinx.android.synthetic.main.activity_college_list.*
+import kotlinx.android.synthetic.main.fragment_filter_view.*
+import kotlinx.android.synthetic.main.fragment_filter_view.view.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -54,11 +55,16 @@ class FilterViewFragment : Fragment() {
 
         MainActivity.fragment ="Filter"
         val layout = inflater.inflate(R.layout.fragment_filter_view, container, false)
-        loadColleges()
+        loadColleges(layout)
         return layout
     }
 
-    private fun loadColleges() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+    }
+
+    private fun loadColleges(layout : View) {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
         val requestCall = destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
         requestCall.enqueue(object : Callback<CollegeWrapper> {
@@ -99,7 +105,7 @@ class FilterViewFragment : Fragment() {
                     Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
 
                     // Set Recycler here
-                    college_recycler.apply {
+                    layout.college_recycler.apply {
                         setHasFixedSize(true)
                         layoutManager = GridLayoutManager(requireContext(),2)
                         adapter = CollegesAdapter(collegeList!!)
