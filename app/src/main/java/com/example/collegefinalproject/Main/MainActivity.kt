@@ -33,12 +33,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        loadColleges()
     }
 
     private fun loadColleges() {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
         val requestCall =
-            destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
+            destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4", "CA", 93, 3)
         requestCall.enqueue(object : Callback<CollegeWrapper> {
             override fun onResponse(
                 call: Call<CollegeWrapper>,
