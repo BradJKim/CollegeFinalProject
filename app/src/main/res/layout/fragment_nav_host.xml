@@ -7,37 +7,72 @@
     android:layout_height="match_parent"
     tools:context=".Main.NavHostFragment">
 
-    <Button
-        android:id="@+id/button_navHost_filter"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/textView_navHost_home"
+        android:layout_width="320dp"
         android:layout_height="wrap_content"
-        android:text="Filter"
-        app:layout_constraintBottom_toTopOf="@+id/button_navHost_viewing"
+        android:layout_marginTop="85dp"
+        android:fontFamily="@font/fredoka_one"
+        android:includeFontPadding="true"
+        android:text="Home"
+        android:textAlignment="center"
+        android:textColor="@color/colorTextLight"
+        android:textSize="30dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/button_navHost_settings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="Settings"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button_navHost_filter" />
+
+    <Button
+        android:id="@+id/button_navHost_filter"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_filtericon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_navHost_settings"
+        app:layout_constraintStart_toEndOf="@+id/button_navHost_viewing" />
+
+    <Button
+        android:id="@+id/button_navHost_home"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_homeiconunclicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_navHost_viewing"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_navHost_viewing" />
+        app:layout_constraintTop_toTopOf="@+id/button_navHost_viewing" />
 
     <Button
         android:id="@+id/button_navHost_viewing"
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/ic_viewicon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_navHost_filter"
+        app:layout_constraintStart_toEndOf="@+id/button_navHost_home" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Viewing"
-        app:layout_constraintBottom_toTopOf="@+id/button_navHost_settings"
+        android:layout_marginBottom="0dp"
+        android:src="@drawable/ic_capybaralogo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_navHost_filter" />
+        app:layout_constraintStart_toStartOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
