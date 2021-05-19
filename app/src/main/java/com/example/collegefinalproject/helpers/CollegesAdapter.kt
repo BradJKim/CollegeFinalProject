@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegefinalproject.Main.MainActivity
@@ -55,7 +56,9 @@ class CollegesAdapter(private val collegesList: List<College>) :RecyclerView.Ada
                 }
             }
 
-            var navController = Navigation.findNavController(itemView)
+            var navController: NavController? = null
+
+            navController = Navigation.findNavController(itemView)
             itemView.setOnClickListener{
                 if(MainActivity.fragment.equals("Filter")) {
                     navController!!.navigate(R.id.action_filterViewFragment_to_collegeFragment)

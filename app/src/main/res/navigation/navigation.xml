@@ -29,7 +29,7 @@
         android:id="@+id/listFragment"
         android:name="com.example.collegefinalproject.Main.ViewingListFragment"
         android:label="fragment_list_list"
-        tools:layout="@layout/fragment_viewing_list">
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_viewingListFragment_to_viewingListViewFragment"
             app:destination="@id/listViewFragment" />
