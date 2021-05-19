@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegefinalproject.R
 import com.example.collegefinalproject.models.College
@@ -107,7 +107,7 @@ class FilterViewFragment : Fragment() {
                     // Set Recycler here
                     layout.college_recycler.apply {
                         setHasFixedSize(true)
-                        layoutManager = GridLayoutManager(requireContext(),2)
+                        layoutManager = LinearLayoutManager(requireContext())
                         adapter = CollegesAdapter(collegeList!!)
                     }
 

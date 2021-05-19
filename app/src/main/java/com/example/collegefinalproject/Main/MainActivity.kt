@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegefinalproject.R
 import com.example.collegefinalproject.models.College
 import com.example.collegefinalproject.services.CollegeService
@@ -79,7 +80,7 @@ class MainActivity : AppCompatActivity() {
                     // Set Recycler here
                     college_recycler.apply {
                         setHasFixedSize(true)
-                        layoutManager = GridLayoutManager(this@MainActivity, 2)
+                        layoutManager = LinearLayoutManager(this@MainActivity)
                         adapter = CollegesAdapter(collegeList!!)
                     }
                 }
