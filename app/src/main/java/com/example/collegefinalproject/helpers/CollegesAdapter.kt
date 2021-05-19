@@ -58,13 +58,15 @@ class CollegesAdapter(private val collegesList: List<College>) :RecyclerView.Ada
 
             var navController: NavController? = null
 
-            navController = Navigation.findNavController(itemView)
+            // navController = Navigation.findNavController(itemView)
             itemView.setOnClickListener{
                 if(MainActivity.fragment.equals("Filter")) {
-                    navController!!.navigate(R.id.action_filterViewFragment_to_collegeFragment)
+                    // navController!!.navigate(R.id.action_filterViewFragment_to_collegeFragment)
+                    Navigation.createNavigateOnClickListener(R.id.action_filterViewFragment_to_collegeFragment)
                 }
                 else if(MainActivity.fragment.equals("List")){
-                    navController!!.navigate(R.id.action_viewingListViewFragment_to_collegeFragment)
+                    // navController!!.navigate(R.id.action_viewingListViewFragment_to_collegeFragment)
+                    Navigation.createNavigateOnClickListener(R.id.action_viewingListViewFragment_to_collegeFragment)
                 }
             }
         }
