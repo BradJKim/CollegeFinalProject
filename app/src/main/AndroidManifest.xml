@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".mainMenu.MainActivity" />
+        <activity android:name=".Main.MainActivity" />
         <activity android:name=".login.RegistrationActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>

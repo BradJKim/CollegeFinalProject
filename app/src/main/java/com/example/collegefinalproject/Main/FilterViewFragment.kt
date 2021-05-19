@@ -1,4 +1,4 @@
-package com.example.collegefinalproject.mainMenu
+package com.example.collegefinalproject.Main
 
 import android.os.Bundle
 import android.util.Log
@@ -7,13 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.annotation.RequiresPermission
+import androidx.fragment.app.FragmentActivity
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.collegefinalproject.R
 import com.example.collegefinalproject.models.College
 import com.example.collegefinalproject.services.CollegeService
 import com.example.collegefinalproject.services.CollegeWrapper
 import com.example.collegefinalproject.services.ServiceBuilder
-import kotlinx.android.synthetic.main.fragment_filter.view.*
+import dev.bensalcie.retrofitest.helpers.CollegesAdapter
+import kotlinx.android.synthetic.main.activity_college_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -49,7 +52,10 @@ class FilterViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
 
-        return inflater.inflate(R.layout.fragment_filter_view, container, false)
+        MainActivity.fragment ="Filter"
+        val layout = inflater.inflate(R.layout.fragment_filter_view, container, false)
+        loadColleges()
+        return layout
     }
 
     private fun loadColleges() {
@@ -62,11 +68,15 @@ class FilterViewFragment : Fragment() {
                     val collegeList = response.body()?.results
                     val filter = MainActivity.filter
 
+                    Log.d("Response", "collegeList size: ${collegeList?.size}")
+                    Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
+
                     // Add filters below to reorder collegelist by filter
                     Collections.sort(collegeList, object : Comparator<College?> {
                         override fun compare(p0: College?, p1: College?): Int {
                             if(p0 == null || p1 == null) {
                                 return 0
+                                Log.d(MainActivity.TAG, "p0 or p1 is null")
                             } else {
                                 if(filter == "Cost") {
                                     return p0.latest.cost.tuition.in_state - p1.latest.cost.tuition.in_state
@@ -79,16 +89,28 @@ class FilterViewFragment : Fragment() {
                                 }
                                 else {
                                     return 0
+                                    Log.d(MainActivity.TAG, "No Filter matches")
                                 }
                             }
                         }
                     })
+
+                    Log.d("Response", "collegeList size: ${collegeList?.size}")
+                    Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
+
+                    // Set Recycler here
+                    college_recycler.apply {
+                        setHasFixedSize(true)
+                        layoutManager = GridLayoutManager(requireContext(),2)
+                        adapter = CollegesAdapter(collegeList!!)
+                    }
 
                     // Log.d("Response", "collegeList size: ${collegeList?.size}")
                     // Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
                 }
                 else{
                     Toast.makeText(requireContext(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Log.d(MainActivity.TAG, "Error: ${response.message()}")
                 }
             }
             override fun onFailure(call: Call<CollegeWrapper>, t: Throwable) {
@@ -117,3 +139,6 @@ class FilterViewFragment : Fragment() {
             }
     }
 }
+
+
+
