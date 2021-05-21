@@ -45,10 +45,10 @@ class CollegesAdapter(private val collegesList: List<College>) :RecyclerView.Ada
 
             nameOfCollege.text = college.school.name
             when {
-                filter.contains("cost") -> {
+                filter.contains("Cost") -> {
                     description.text = college.latest.cost.tuition.in_state.toString()
                 }
-                filter.contains("debt") -> {
+                filter.contains("Debt") -> {
                     description.text = college.latest.aid.cumulative_debt.number.toString()
                 }
                 filter.contains("Asian") -> {

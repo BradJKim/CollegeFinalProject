@@ -794,12 +794,12 @@ data class College(
                 )
 
                 data class GradPlus(
-                    val amount: Int,
+                    val amount: Long,
                     val count: Int
                 )
 
                 data class ParentPlus(
-                    val amount: Int,
+                    val amount: Long,
                     val count: Int
                 )
             }
