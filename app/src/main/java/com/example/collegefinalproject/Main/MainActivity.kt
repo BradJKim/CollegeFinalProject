@@ -2,9 +2,14 @@ package com.example.collegefinalproject.Main
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegefinalproject.R
@@ -91,5 +96,22 @@ class MainActivity : AppCompatActivity() {
                 Log.d(MainActivity.TAG, "$t")
             }
         })
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_options, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle item selection
+        return when (item.itemId) {
+            R.id.home -> {
+                Navigation.findNavController(this, R.id.navHostFragment).popBackStack(R.id.navHostFragment, true)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

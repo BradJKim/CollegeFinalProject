@@ -107,7 +107,7 @@ class FilterViewFragment : Fragment() {
                     // Set Recycler here
                     layout.college_recycler.apply {
                         setHasFixedSize(true)
-                        layoutManager = LinearLayoutManager(requireContext())
+                        layoutManager = LinearLayoutManager(requireActivity())
                         adapter = CollegesAdapter(collegeList!!)
                     }
 
@@ -115,7 +115,7 @@ class FilterViewFragment : Fragment() {
                     // Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
                 }
                 else{
-                    Toast.makeText(requireContext(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
                     Log.d(MainActivity.TAG, "Error: ${response.message()}")
                 }
             }
