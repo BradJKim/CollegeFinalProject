@@ -1,11 +1,10 @@
 package com.example.collegefinalproject.Main
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.collegefinalproject.R
 import kotlinx.android.synthetic.main.fragment_filter.*
 import kotlinx.android.synthetic.main.fragment_filter.view.*
@@ -41,6 +40,8 @@ class FilterFragment : Fragment() {
         // Inflate the layout for this fragment
         val layout = inflater.inflate(R.layout.fragment_filter, container, false)
 
+        setHasOptionsMenu(true)
+
         // Create onClickListeners here for filters
         // set filter in mainactivity into filter name and navigate to new fragment
         layout.button_filter_1.setOnClickListener {
@@ -56,6 +57,20 @@ class FilterFragment : Fragment() {
             view?.findNavController()?.navigate(R.id.action_filterFragment_to_filterViewFragment)
         }
         return layout
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_options, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.home) {
+            view?.findNavController()?.navigate(R.id.action_filterFragment_to_navHostFragment)
+        }
+        return NavigationUI.
+        onNavDestinationSelected(item,requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     companion object {

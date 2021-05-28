@@ -2,12 +2,12 @@ package com.example.collegefinalproject.Main
 
 import android.os.Bundle
 import android.util.Log
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegefinalproject.R
@@ -56,6 +56,7 @@ class FilterViewFragment : Fragment() {
         MainActivity.fragment ="Filter"
         val layout = inflater.inflate(R.layout.fragment_filter_view, container, false)
         loadColleges(layout)
+        setHasOptionsMenu(true)
         return layout
     }
 
