@@ -8,7 +8,7 @@
     tools:context=".Main.ViewingListFragment">
 
     <TextView
-        android:id="@+id/textView_collegeList_college3"
+        android:id="@+id/textView_collegeList_collegeName"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_one"
@@ -18,168 +18,23 @@
         android:textColor="@color/colorTextLight"
         android:textSize="36dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_background3"
+        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_description"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView_collegeList_religiousAffiliation2"
+        android:id="@+id/textView_collegeList_description"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_one"
-        android:text="Religious Affiliation:"
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_studentState2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_malePercentage2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_femalePercentage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Female Percentage: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_malePercentage2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_demographics3" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_backgroundInfo2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="(background)"
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_glance3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_background3" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_malePercentage2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Male Percentage: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_religiousAffiliation2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_femalePercentage2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_background3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Quick Background:"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_backgroundInfo2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_college3" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_studentState2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Most Popular State: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_familyIncome2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_religiousAffiliation2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_facultyCount2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Faculty Count: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_demographics3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_price2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_familyIncome2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Average Family Income: "
+        android:text="description (placeholder)"
         android:textColor="#18191A"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_studentState2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_demographics3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Demographics:"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_femalePercentage2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_facultyCount2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_price2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Price: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_facultyCount2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_acceptanceRate2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_glance3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="At a Glance:"
-        android:textColor="#000000"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_city2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_backgroundInfo2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_acceptanceRate2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Acceptance Rate: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_price2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_city2" />
-
-    <TextView
-        android:id="@+id/textView_collegeList_city2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="City: "
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_acceptanceRate2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_glance3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_collegeName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
