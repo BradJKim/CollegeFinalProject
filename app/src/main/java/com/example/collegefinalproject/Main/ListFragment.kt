@@ -1,10 +1,11 @@
 package com.example.collegefinalproject.Main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
+import android.view.*
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.collegefinalproject.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,11 +36,26 @@ class ViewingListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        setHasOptionsMenu(true)
         return inflater.inflate(R.layout.fragment_list, container, false)
 
         // Make college list adapter
         // Put recycler on fragment list
         // apply recycler? (w/list of collegelists, received earlier)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_options, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.home) {
+            view?.findNavController()?.navigate(R.id.action_listFragment_to_navHostFragment)
+        }
+        return NavigationUI.
+        onNavDestinationSelected(item,requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     companion object {
@@ -61,4 +77,5 @@ class ViewingListFragment : Fragment() {
                 }
             }
     }
+
 }
