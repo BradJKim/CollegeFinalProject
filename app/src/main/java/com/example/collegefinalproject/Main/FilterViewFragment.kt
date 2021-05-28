@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.collegefinalproject.R
@@ -108,7 +109,7 @@ class FilterViewFragment : Fragment() {
                     // Set Recycler here
                     layout.college_recycler.apply {
                         setHasFixedSize(true)
-                        layoutManager = LinearLayoutManager(requireActivity())
+                        layoutManager = GridLayoutManager(requireContext(),1)
                         adapter = CollegesAdapter(collegeList!!)
                     }
 
@@ -116,7 +117,7 @@ class FilterViewFragment : Fragment() {
                     // Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
                 }
                 else{
-                    Toast.makeText(requireActivity(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
                     Log.d(MainActivity.TAG, "Error: ${response.message()}")
                 }
             }

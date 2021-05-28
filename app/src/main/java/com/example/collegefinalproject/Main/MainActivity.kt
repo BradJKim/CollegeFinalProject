@@ -21,7 +21,8 @@ import com.example.collegefinalproject.services.CollegeService
 import com.example.collegefinalproject.services.CollegeWrapper
 import com.example.collegefinalproject.services.ServiceBuilder
 import dev.bensalcie.retrofitest.helpers.CollegesAdapter
-import kotlinx.android.synthetic.main.activity_college_list.*
+import kotlinx.android.synthetic.main.fragment_filter_view.*
+//import kotlinx.android.synthetic.main.activity_college_list.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

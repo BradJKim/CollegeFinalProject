@@ -73,9 +73,9 @@
     </fragment>
     <fragment
         android:id="@+id/collegeFragment"
-        android:name="com.example.collegefinalproject.Main.CollegeFragment"
+        android:name="com.example.collegefinalproject.Main.CollegeViewFragment"
         android:label="fragment_college"
-        tools:layout="@layout/fragment_college" >
+        tools:layout="@layout/fragment_college_view" >
         <action
             android:id="@+id/action_collegeFragment_to_navHostFragment"
             app:destination="@id/navHostFragment" />

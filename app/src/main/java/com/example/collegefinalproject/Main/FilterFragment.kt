@@ -59,10 +59,12 @@ class FilterFragment : Fragment() {
         return layout
     }
 
+    /**
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.menu_options, menu)
     }
+    */
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.home) {

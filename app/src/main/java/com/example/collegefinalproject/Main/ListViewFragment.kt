@@ -1,11 +1,26 @@
 package com.example.collegefinalproject.Main
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.collegefinalproject.R
+import com.example.collegefinalproject.models.College
+import com.example.collegefinalproject.services.CollegeService
+import com.example.collegefinalproject.services.CollegeWrapper
+import com.example.collegefinalproject.services.ServiceBuilder
+import dev.bensalcie.retrofitest.helpers.CollegesAdapter
+import kotlinx.android.synthetic.main.fragment_filter_view.view.*
+import kotlinx.android.synthetic.main.fragment_list_view.view.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import java.util.*
+import kotlin.Comparator
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,7 +52,71 @@ class ListViewFragment : Fragment() {
         // Inflate the layout for this fragment
 
         MainActivity.fragment ="List"
-        return inflater.inflate(R.layout.fragment_list_view, container, false)
+        val layout = inflater.inflate(R.layout.fragment_list_view, container, false)
+
+        loadColleges(layout)
+
+        return layout
+    }
+
+    fun loadColleges(layout : View){
+
+        /**
+        val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
+        val requestCall = destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
+        requestCall.enqueue(object : Callback<CollegeWrapper> {
+            override fun onResponse(call: Call<CollegeWrapper>, response: Response<CollegeWrapper>) {
+                Log.d("Response", "onResponse: ${response.body()}")
+                if (response.isSuccessful){
+                    val collegeList = response.body()?.results
+                    val filter = MainActivity.filter
+
+                    // Add filters below to reorder collegelist by filter
+                    Collections.sort(collegeList, object : Comparator<College?> {
+                        override fun compare(p0: College?, p1: College?): Int {
+                            if(p0 == null || p1 == null) {
+                                return 0
+                                Log.d(MainActivity.TAG, "p0 or p1 is null")
+                            } else {
+                                if(filter == "Cost") {
+                                    return p0.latest.cost.tuition.in_state - p1.latest.cost.tuition.in_state
+                                }
+                                else if(filter == "Debt"){
+                                    return p0.latest.aid.cumulative_debt.number - p1.latest.aid.cumulative_debt.number
+                                }
+                                else if(filter == "Asian"){
+                                    return (p0.latest.student.demographics.race_ethnicity.asian - p1.latest.student.demographics.race_ethnicity.asian).toInt()
+                                }
+                                else {
+                                    return 0
+                                    Log.d(MainActivity.TAG, "No Filter matches")
+                                }
+                            }
+                        }
+                    })
+
+                    // Set Recycler here
+                    layout.college_recycler_list.apply{
+                        setHasFixedSize(true)
+                        layoutManager = LinearLayoutManager(requireContext())
+                        adapter = CollegesAdapter(collegeList!!)
+                    }
+
+                    // Log.d("Response", "collegeList size: ${collegeList?.size}")
+                    // Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
+                }
+                else{
+                    Toast.makeText(requireContext(), "Something went wrong ${response.message()}", Toast.LENGTH_SHORT).show()
+                    Log.d(MainActivity.TAG, "Error: ${response.message()}")
+                }
+            }
+            override fun onFailure(call: Call<CollegeWrapper>, t: Throwable) {
+                Toast.makeText(requireContext(), "Something went wrong $t", Toast.LENGTH_SHORT).show()
+                Log.d(MainActivity.TAG, "$t")
+            }
+        })
+        */
+
     }
 
     companion object {

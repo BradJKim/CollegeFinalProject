@@ -9,62 +9,34 @@
 
     <Button
         android:id="@+id/button_filter_3"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="174dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Click to Filter by\nthe % of Asian Students"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/colorTextLight"
+        android:text="Asian"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_filter_2" />
 
     <Button
         android:id="@+id/button_filter_2"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="174dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Click to Filter by\nDebt Rate"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_corners"
-        android:backgroundTint="@color/colorAccentLight"
+        android:text="Debt"
         app:layout_constraintBottom_toTopOf="@+id/button_filter_3"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_filter_1" />
 
     <Button
         android:id="@+id/button_filter_1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="174dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimaryLight"
-        android:fontFamily="@font/fredoka_one"
-        android:text="Click to Filter by\nCost"
-        android:textAllCaps="false"
-        android:background="@drawable/rounded_corners"
+        android:text="Cost"
         app:layout_constraintBottom_toTopOf="@+id/button_filter_2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_filter_description" />
-
-    <TextView
-        android:id="@+id/textView_filter_description"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:includeFontPadding="true"
-        android:text="This is the filter section! \n \n Here, you can filter the colleges with a range of different filters!"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextLight"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/button_filter_1"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

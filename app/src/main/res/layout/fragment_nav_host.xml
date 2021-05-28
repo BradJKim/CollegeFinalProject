@@ -65,7 +65,7 @@
         app:layout_constraintStart_toEndOf="@+id/button_navHost_home" />
 
     <ImageView
-        android:id="@+id/imageView_navHost_capybaraLogo"
+        android:id="@+id/imageView2"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="0dp"

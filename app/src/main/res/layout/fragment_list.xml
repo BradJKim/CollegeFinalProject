@@ -7,34 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".Main.ViewingListFragment">
 
-    <TextView
-        android:id="@+id/textView_collegeList_collegeName"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:includeFontPadding="true"
-        android:text="collegename (placeholder)"
-        android:textAlignment="center"
-        android:textColor="@color/colorTextLight"
-        android:textSize="36dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView_collegeList_description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/collegeList_recycler"
+        layout_constraintBottom_toBottomOf="parent"
+        layout_constraintEnd_toEndOf="parent"
+        layout_constraintStart_toStartOf="parent"
+        layout_constraintTop_toTopOf="parent"
+        android:layout_width="420dp"
+        android:layout_height="654dp"
+        app:layout_constraintTop_toBottomOf="@+id/button_list_addList" />
 
-    <TextView
-        android:id="@+id/textView_collegeList_description"
+    <Button
+        android:id="@+id/button_list_addList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/fredoka_one"
-        android:text="description (placeholder)"
-        android:textColor="#18191A"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Add List"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_collegeList_collegeName" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
