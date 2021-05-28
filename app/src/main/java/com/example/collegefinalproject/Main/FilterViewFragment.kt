@@ -6,6 +6,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.GridLayoutManager
@@ -68,7 +69,8 @@ class FilterViewFragment : Fragment() {
 
     private fun loadColleges(layout : View) {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
-        val requestCall = destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
+        val requestCall =
+            destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4", "CA", 20, 3)
         requestCall.enqueue(object : Callback<CollegeWrapper> {
             override fun onResponse(call: Call<CollegeWrapper>, response: Response<CollegeWrapper>) {
                 Log.d("Response", "onResponse: ${response.body()}")

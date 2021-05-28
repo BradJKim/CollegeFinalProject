@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.collegefinalproject.R
+import kotlinx.android.synthetic.main.activity_college.view.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -36,7 +37,8 @@ class CollegeViewFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         setHasOptionsMenu(true)
-        return inflater.inflate(R.layout.fragment_college_view, container, false)
+        val layout = inflater.inflate(R.layout.fragment_college_view, container, false)
+        return layout
     }
 
     /**

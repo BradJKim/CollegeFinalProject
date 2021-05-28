@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/fredoka_one"
         android:includeFontPadding="true"
-        android:text="collegename (placeholder)"
+        android:text="College Name:"
         android:textAlignment="center"
         android:textColor="@color/colorTextLight"
         android:textSize="36dp"

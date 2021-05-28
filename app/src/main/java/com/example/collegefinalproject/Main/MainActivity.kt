@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
     private fun loadColleges() {
         val destinationService = ServiceBuilder.buildService(CollegeService::class.java)
         val requestCall =
-            destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4")
+            destinationService.getCollegesList("JwqB47hsWQYqWuyAdDNuRMYiidSuQe1w8i38NYY4", "CA", 20, 3)
         requestCall.enqueue(object : Callback<CollegeWrapper> {
             override fun onResponse(
                 call: Call<CollegeWrapper>,
@@ -85,12 +85,14 @@ class MainActivity : AppCompatActivity() {
                     Log.d("Response", "collegeList size: ${collegeList?.size}")
                     Log.d("Response", "College Name: ${collegeList?.get(0)?.school?.name}")
 
+                    /**
                     // Set Recycler here
                     college_recycler.apply {
                         setHasFixedSize(true)
                         layoutManager = LinearLayoutManager(this@MainActivity)
                         adapter = CollegesAdapter(collegeList!!)
                     }
+                    */
                 }
             }
 
